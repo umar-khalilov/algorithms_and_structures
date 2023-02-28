@@ -15,7 +15,7 @@ const binarySearch = (array = [], item) => {
     while (isFound === false && start <= end) {
         count += 1;
         mid = Math.floor((start + end) / 2);
-        if (array[mid] === item) {
+        if (item === array[mid]) {
             isFound = true;
             position = mid;
             return position;

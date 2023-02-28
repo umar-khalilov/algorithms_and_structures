@@ -6,7 +6,7 @@ const linearSearch = (array = [], item) => {
     const length = array.length;
     for (let index = 0; index < length; index++) {
         console.count('count');
-        if (array[index] === item) return index;
+        if (item === array[index]) return index;
     }
     return null;
 };
