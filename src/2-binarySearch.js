@@ -26,5 +26,4 @@ const binarySearch = (array = [], item) => {
     return position;
 };
 
-console.log(binarySearch(arrOfSortedNumbers, 10));
-console.log('count: ' + count);
+console.log(binarySearch(arrOfSortedNumbers, 10), '\ncount: ' + count); // O(log 2n)

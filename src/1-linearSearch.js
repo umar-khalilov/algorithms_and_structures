@@ -11,4 +11,4 @@ const linearSearch = (array = [], item) => {
     return null;
 };
 
-console.log(linearSearch(arrOfNumbers, 1));
+console.log(linearSearch(arrOfNumbers, 1)); // O(n)
