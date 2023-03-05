@@ -26,4 +26,19 @@ const binarySearch = (array = [], item) => {
     return position;
 };
 
-console.log(binarySearch(arrOfSortedNumbers, 10), '\ncount: ' + count); // O(log 2n)
+console.log(binarySearch(arrOfSortedNumbers, 12), '\ncount: ' + count); // O(log 2n)
+count = 0;
+
+const recursiveBinarySearch = (array = [], item, start, end) => {
+    let middle = Math.floor((start + end) / 2);
+    count++;
+    if (item === array[middle]) return middle;
+    if (item < array[middle])
+        return recursiveBinarySearch(array, item, start, middle - 1);
+    else return recursiveBinarySearch(array, item, middle + 1, end);
+};
+
+console.log(
+    recursiveBinarySearch(arrOfSortedNumbers, 12, 0, arrOfSortedNumbers.length),
+);
+console.log('count: ' + count);
