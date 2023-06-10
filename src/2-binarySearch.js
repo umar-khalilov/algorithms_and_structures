@@ -8,20 +8,23 @@ let count = 0;
 const binarySearch = (array = [], item) => {
     let start = 0,
         end = array.length,
-        mid,
+        middle,
         isFound = false,
         position = -1;
 
     while (isFound === false && start <= end) {
-        count += 1;
-        mid = Math.floor((start + end) / 2);
-        if (item === array[mid]) {
+        count++;
+        middle = Math.floor((start + end) / 2);
+        if (item === array[middle]) {
             isFound = true;
-            position = mid;
+            position = middle;
             return position;
         }
-        if (item < array[mid]) end = mid - 1;
-        else start = mid + 1;
+        if (item < array[middle]) {
+            end = middle - 1;
+        } else {
+            start = middle + 1;
+        }
     }
     return position;
 };
@@ -33,9 +36,11 @@ const recursiveBinarySearch = (array = [], item, start, end) => {
     let middle = Math.floor((start + end) / 2);
     count++;
     if (item === array[middle]) return middle;
-    if (item < array[middle])
+    if (item < array[middle]) {
         return recursiveBinarySearch(array, item, start, middle - 1);
-    else return recursiveBinarySearch(array, item, middle + 1, end);
+    } else {
+        return recursiveBinarySearch(array, item, middle + 1, end);
+    }
 };
 
 console.log(

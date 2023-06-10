@@ -24,4 +24,4 @@ const quickSort = (array = []) => {
 };
 
 console.log(quickSort(arrOfNumbers)); // O(log2n*n)
-console.log('count: ' + counter);
+console.log(`count: ${counter}`);
