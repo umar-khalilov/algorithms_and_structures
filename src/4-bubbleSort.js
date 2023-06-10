@@ -7,7 +7,14 @@ const arrOfNumbers = [
 ];
 let count = 0;
 
+/**
+ * @param {number[]} array unsorted
+ * @returns {number[]} sorted array
+ */
 const bubbleSort = (array = []) => {
+    if (!Array.isArray(array)) throw new TypeError('Need array');
+    if (!array.length) return array;
+
     const length = array.length;
     for (let i = 0; i < length; i++) {
         for (let j = 0; j < length; j++) {

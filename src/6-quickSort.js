@@ -7,10 +7,16 @@ const arrOfNumbers = [
 ];
 let counter = 0;
 
+/**
+ * @param {number[]} array unsorted array
+ * @returns {number[]} sorted array
+ */
 const quickSort = (array = []) => {
+    if (!Array.isArray(array)) throw new TypeError('Need array');
     if (array.length <= 1) return array;
+
     const length = array.length,
-        pivotIndex = Math.floor(array.length / 2),
+        pivotIndex = Math.floor(length / 2),
         pivot = array[pivotIndex],
         less = [],
         greater = [];

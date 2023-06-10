@@ -6,7 +6,14 @@ const arrOfNumbers = [
 ];
 let count = 0;
 
+/**
+ * @param {number[]} array unsorted
+ * @returns {number[]} sorted array
+ */
 const selectionSort = (array = []) => {
+    if (!Array.isArray(array)) throw new TypeError('Need array');
+    if (!array.length) return array;
+
     const { length } = array;
     for (let i = 0; i < length; i++) {
         let minIndex = i;

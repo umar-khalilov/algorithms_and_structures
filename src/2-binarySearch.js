@@ -5,7 +5,15 @@ const arrOfSortedNumbers = [
 ];
 let count = 0;
 
+/**
+ * @param {number[]} array of numbers
+ * @param {number} item to search
+ * @returns {number} position of item
+ */
 const binarySearch = (array = [], item) => {
+    if (!Array.isArray(array)) throw new TypeError('Need array');
+    if (!array.length) return array;
+
     let start = 0,
         end = array.length,
         middle,
@@ -29,7 +37,7 @@ const binarySearch = (array = [], item) => {
     return position;
 };
 
-console.log(binarySearch(arrOfSortedNumbers, 12), '\ncount: ' + count); // O(log 2n)
+console.log(binarySearch(arrOfSortedNumbers, 20), '\ncount: ' + count); // O(log 2n)
 count = 0;
 
 const recursiveBinarySearch = (array = [], item, start, end) => {

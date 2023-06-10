@@ -9,6 +9,13 @@ const graph = {
     f: ['g'],
 };
 
+/**
+ *
+ * @param {object} graph
+ * @param {string} start
+ * @param {string} end
+ * @returns {boolean}
+ */
 const breadthSearch = (graph = {}, start, end) => {
     let queue = [start];
     while (queue.length) {

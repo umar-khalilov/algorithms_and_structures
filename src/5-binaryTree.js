@@ -25,11 +25,16 @@ const binaryTree = {
     },
 };
 
-const sumTree = (tree = {}) =>
-    Object.values(tree).reduce((acc, item) => {
+/**
+ * @param {object} tree with branches
+ * @returns {number} summary value
+ */
+const sumTree = (tree = {}) => {
+    if (Array.isArray(tree)) throw new TypeError('Need plain object');
+    return Object.values(tree).reduce((acc, item) => {
         if (typeof item === 'number') acc += item;
         acc += sumTree(item);
         return acc;
     }, 0);
-
+};
 console.log(sumTree(binaryTree));
