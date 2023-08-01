@@ -41,6 +41,8 @@ console.log(binarySearch(arrOfSortedNumbers, 20), '\ncount: ' + count); // O(log
 count = 0;
 
 const recursiveBinarySearch = (array = [], item, start, end) => {
+    if (!Array.isArray(array)) throw new TypeError('Need array');
+    if (!array.length) return array;
     let middle = Math.floor((start + end) / 2);
     count++;
     if (item === array[middle]) return middle;

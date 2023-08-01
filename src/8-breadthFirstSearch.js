@@ -10,7 +10,6 @@ const graph = {
 };
 
 /**
- *
  * @param {object} graph
  * @param {string} start
  * @param {string} end
@@ -27,4 +26,4 @@ const breadthSearch = (graph = {}, start, end) => {
     return false;
 };
 
-console.log(breadthSearch(graph, 'a', 'g'));
+console.log(breadthSearch(graph, 'c', 'f'));
